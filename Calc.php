@@ -1,7 +1,39 @@
 <?php
 //Calculator
+$number1 = $_GET["number1"];
+$number2 = $_GET["number2"];
+$op = $_GET["op"];
 
-$RESULT = $_GET["number1"] +  $_GET["number2"];
+if(empty($number1)){
+    echo "Number1 field is empty";
+    
+} else if(empty($number2)){
+    echo "Number2 field is empty";
+    
+} else if(empty($op)){
+    echo "op field is empty";
+    
+    
+} else if (!empty($number1) && !empty($number2) && !empty($op)){
+
+if($op === "+"){
+    $RESULT = $_GET["number1"] +  $_GET["number2"];
+} else if($op === "-"){
+    $RESULT = $_GET["number1"] -  $_GET["number2"];
+} else if($op === "/"){
+    $RESULT = $_GET["number1"] /  $_GET["number2"];
+} else if($op === "*"){
+    $RESULT = $_GET["number1"] *  $_GET["number2"];
+} 
+
+}
+
+
+
+
+
+
+
 
 ?>
 
@@ -23,6 +55,13 @@ $RESULT = $_GET["number1"] +  $_GET["number2"];
                 <label>Enter Number2: </label>
                 <input type="number" id="num2" name="number2" class="form-control">
             </div>
+
+<br>
+<div>
+<label>Operation:</label>
+<input type="text" name="op" class="form-control">
+</div>
+<br>
 
 <div class="alert alert-success">
 
